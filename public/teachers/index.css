@@ -1,0 +1,121 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fff1f8);
+  background-size: 400% 400%;
+  animation: bgShift 10s ease infinite;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.main {
+  max-width: 960px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  animation: slideFade 0.8s ease-out;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  animation: fadeIn 0.8s ease;
+}
+
+.alert {
+  padding: 14px 22px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  font-weight: 500;
+  animation: fadeIn 0.8s ease;
+}
+
+form {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(0, 86, 179, 0.3);
+}
+
+button.del {
+  background-color: #dc3545;
+}
+
+button.del:hover {
+  background-color: #b21f2d;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  animation: fadeIn 1s ease;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 14px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.table tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.table tr:hover {
+  background-color: #e0f7fa;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,141 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #e0f7fa, #fff3e0);
+  animation: bgMove 15s ease infinite alternate;
+  color: #333;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+h3 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #2c3e50;
+  animation: fadeInDown 1s ease;
+}
+
+form#new, form[action="/"] {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#btn, #dash_btn {
+  padding: 10px 18px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+#btn:hover,
+#dash_btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.std-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.std {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s ease;
+  animation: slideUp 0.8s ease;
+}
+
+.std:hover {
+  transform: translateY(-8px);
+}
+
+.student {
+  padding: 20px;
+  text-align: left;
+  background-color: #df9191;
+  border-radius: 6px;
+}
+
+.student p {
+  margin: 10px 0;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.student form {
+  display: inline-block;
+  margin: 10px 5px 0 0;
+}
+
+.student button {
+  background-color: #28a745;
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.student button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.student form:last-of-type button {
+  background-color: #dc3545;
+}
+
+.student form:last-of-type button:hover {
+  background-color: #c82333;
+}
+
+hr {
+  margin-top: 20px;
+  border: none;
+  height: 1px;
+  background-color: #eee;
+}
+
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+  .std {
+    width: 90%;
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teachers</title>
+  <link href="/teachers/index.css" rel="stylesheet">
+</head>
+<body>
+  <div class="main">
+    <% if (success) { %>
+      <div class="alert alert-success"><%= success %></div>
+    <% } %>
+    <h1>Teachers List</h1>
+    
+    <form action="/teachers/new">
+      <button>Add Teacher</button>
+    </form>
+    <form action="/">
+      <button>Back to dashboard</button>
+    </form>
+    <table class="table">
+      <thead>
+        <tr><th>Name</th><th>Subject</th><th>Email</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        <% teachers.forEach(t => { %>
+          <tr>
+            <td><%= t.name %></td>
+            <td><%= t.subject %></td>
+            <td><%= t.email %></td>
+            <td>
+             
+              <form action="/teachers/<%= t._id %>/edit">
+                <button>edit</button>
+              </form>
+              <form action="/teachers/<%= t._id %>?_method=DELETE" method="POST" class="d-inline">
+                <button class="del">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

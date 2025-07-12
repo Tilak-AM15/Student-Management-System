@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT</title>
+    <link rel="stylesheet" href="/students/edit.css">
+</head>
+
+<body>
+    <h3>EDIT YOUR DETAILS:<%= student.name%></h3>
+    <form action="/students/<%= student._id%>?_method=PUT" method="POST">
+        <textarea name="name" id=""><%=student.name%></textarea><br>
+        <textarea name="usn" id=""><%=student.usn%></textarea><br>
+        <textarea name="mail" id=""><%=student.mail%></textarea><br>
+        <textarea name="percent" id=""><%=student.percent%></textarea><br>
+        <button>UPDATE</button>
+    </form>
+    
+<form action="/students/<%= student._id%>?_method=PUT" method="POST">
+  <button type="submit" class="cancel-btn">Cancel</button>
+</form>
+
+</body>
+
+</html>

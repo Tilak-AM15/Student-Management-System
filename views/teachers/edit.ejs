@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Teacher</title>
+  <link href="/teachers/edit.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Teacher</h1>
+    <form method="POST" action="/teachers/<%= teacher._id %>?_method=PUT">
+      <div class="mb-3">
+        <label>Name</label>
+        <input class="form-control" name="name" value="<%= teacher.name %>" required>
+      </div>
+      <div class="mb-3">
+        <label>Subject</label>
+        <input class="form-control" name="subject" value="<%= teacher.subject %>" required>
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" value="<%= teacher.email %>" required>
+      </div>
+      <button class="btn">Update</button>
+    </form>
+
+<form action="/teachers/<%= teacher._id %>?_method=PUT" method="POST">
+  <button type="submit" class="cancel-btn">Cancel</button>
+  </form>
+  </div>
+</body>
+</html>

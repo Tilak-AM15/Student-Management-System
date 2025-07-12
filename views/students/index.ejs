@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="/students/index.css">
+</head>
+<body>
+    <h3>ALL STUDENTS</h3>
+   
+    <form action="/students/new" method="GET" id="new">
+        <button id="btn">ADD NEW STUDENT</button>
+    </form>
+
+    <div class="std-row">
+        <% for (let student of students) { %>
+          <div class="std">
+            <div class="student">
+            <p>NAME: <%= student.name %></p>
+              <p>USN: <%= student.usn %></p>
+              <p>MAIL: <%= student.mail %></p>
+              <p>PERCENTAGE: <%= student.percent %></p>
+              <form action="/students/<%= student._id %>/edit" method="GET">
+                <button id="btn">EDIT</button>
+              </form>
+              <form method="POST" action="/students/<%= student._id %>?_method=DELETE">
+                <button id="btn">DELETE</button>
+              </form>
+            <hr>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    <form action="/" >
+      <button id="dash_btn">Back to dashboard</button>
+    </form>
+      
+</body>
+</html>

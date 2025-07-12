@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Teacher</title>
+  <link href="/teachers/new.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Add New Teacher</h1>
+    <% if (errors.length > 0) { %>
+      <div class="alert alert-danger">
+        <ul>
+          <% errors.forEach(e => { %>
+            <li><%= e.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% } %>
+    <form method="POST" action="/teachers">
+      <div class="mb-3">
+        <label>Name</label>
+        <input class="form-control" name="name" >
+      </div>
+      <div class="mb-3">
+        <label>Subject</label>
+        <input class="form-control" name="subject" >
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" >
+      </div>
+      <button class="btn btn-primary">Add</button>
+    </form>
+    <form action="/teachers" method="POST">
+  <button type="submit" class="cancel-btn">Cancel</button>
+  </form>
+  </div>
+</body>
+</html>
